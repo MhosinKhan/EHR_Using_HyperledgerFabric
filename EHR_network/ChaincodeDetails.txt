@@ -1,0 +1,32 @@
+//Chaincode Functons Defination
+
+1. addPatient( patientDetails ) ;
+// This function registers a new patient in the system with its personal details like unique ID, name, phone number and email ID.
+
+2. isPatientRegistered( patiendID ) ;
+// This function checks whether the specified ID is registered or not. Helper function for addPatient() function, so that unique ID is assigned to new patient.
+
+3. addDoctor( doctorDetails ) ;
+// This function registers a new doctor in the system.
+
+4. assignPatToDoc ( doctorDetails ) ;
+// This function assigns a doctor of the specific hospital to the patient. ( A list of patientIDs is stored in the doctor's details taking treatment under this doctor).
+
+5. editPatientDetails (doctorDetails ) ;
+// This function updates the doctor details in the patient's data like patient consulting under which doctor, which hospital and other details of doctor.
+
+6. canViewEHR ( doctorID, patientID ) ;
+// This function check whether the specified doctor can view/access the specified patient's EHR.
+
+7. viewEHR ( patientID ) ;
+// If doctor has access to view the EHR of patient, this function will return the EHR of specified patient.
+
+8. updateEHR ( patientID, newEHR) ;
+// If doctor has access to add/update the EHR of the specified patient, this function will update the EHR of patient.
+
+9. shareEHR ( patientID , doctorID ) ;
+// This function will help patient to grant permission to specified doctor to view/update his/her EHR.
+
+10. getMyHistory( patientID ) ;
+// This function will return complete information of the patient right from its creation to the last transaction occured.
+

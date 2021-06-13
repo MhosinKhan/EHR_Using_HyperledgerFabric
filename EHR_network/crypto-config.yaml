@@ -1,0 +1,31 @@
+# Organization managing orderer nodes
+OrdererOrgs:
+  - Name: Orderer
+    Domain: example.com
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: orderer
+        SANS:
+            - "localhost"
+            - "127.0.0.1"
+
+# Organization managing peer nodes
+PeerOrgs:
+  - Name: Hospital1
+    Domain: hospital1.example.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+      SANS:
+        - "localhost"
+    Users:
+      Count: 1
+  - Name: Hospital2
+    Domain: hospital2.example.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+      SANS:
+        - "localhost"
+    Users:
+      Count: 1

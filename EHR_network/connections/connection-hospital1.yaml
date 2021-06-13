@@ -1,0 +1,66 @@
+---
+name: ehr-network-hospital1
+version: 1.0.0
+client:
+  organization: hospital1
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+organizations:
+  hospital1:
+    mspid: Hospital1MSP
+    peers:
+    - peer0.hospital1.example.com
+    certificateAuthorities:
+    - ca.hospital1.example.com
+peers:
+  peer0.hospital1.example.com:
+    url: grpcs://localhost:7051
+    tlsCACerts:
+      pem: |
+          -----BEGIN CERTIFICATE-----
+          MIICbjCCAhOgAwIBAgIQaFtoy+ca/xUxk+l58DFRvjAKBggqhkjOPQQDAjCBgDEL
+          MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+          cmFuY2lzY28xHjAcBgNVBAoTFWhvc3BpdGFsMS5leGFtcGxlLmNvbTEkMCIGA1UE
+          AxMbdGxzY2EuaG9zcGl0YWwxLmV4YW1wbGUuY29tMB4XDTIxMDUyODE4MjIwMFoX
+          DTMxMDUyNjE4MjIwMFowgYAxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9y
+          bmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMR4wHAYDVQQKExVob3NwaXRhbDEu
+          ZXhhbXBsZS5jb20xJDAiBgNVBAMTG3Rsc2NhLmhvc3BpdGFsMS5leGFtcGxlLmNv
+          bTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABNjH9BoIiG6wp2QK8KURBL/l68tP
+          xvn2tASdXuARIebbJDLMS6Aa6Said3QZKJKcov3repW0sa5ckWY7GadEKp+jbTBr
+          MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEw
+          DwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgDtaGHfQmFnzwt/ahSo0rhL8RtNAp
+          mioq3YerqEav0HswCgYIKoZIzj0EAwIDSQAwRgIhAI8j+J47WGgEhvt5QBgKxQGa
+          2XeoItOyudKggBLz0TUkAiEA/SoVId05NrapmEYpqADo/lQElYJ3tFSzoYUwqFge
+          hFQ=
+          -----END CERTIFICATE-----
+          
+    grpcOptions:
+      ssl-target-name-override: peer0.hospital1.example.com
+      hostnameOverride: peer0.hospital1.example.com
+certificateAuthorities:
+  ca.hospital1.example.com:
+    url: https://localhost:7054
+    caName: ca.hospital1.example.com
+    tlsCACerts:
+      pem: 
+        - |
+          -----BEGIN CERTIFICATE-----
+          MIICZjCCAgygAwIBAgIRAMJXN/PnTrDHKdFb0EgvIpkwCgYIKoZIzj0EAwIwfTEL
+          MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+          cmFuY2lzY28xHjAcBgNVBAoTFWhvc3BpdGFsMS5leGFtcGxlLmNvbTEhMB8GA1UE
+          AxMYY2EuaG9zcGl0YWwxLmV4YW1wbGUuY29tMB4XDTIxMDUyODE4MjIwMFoXDTMx
+          MDUyNjE4MjIwMFowfTELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWEx
+          FjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xHjAcBgNVBAoTFWhvc3BpdGFsMS5leGFt
+          cGxlLmNvbTEhMB8GA1UEAxMYY2EuaG9zcGl0YWwxLmV4YW1wbGUuY29tMFkwEwYH
+          KoZIzj0CAQYIKoZIzj0DAQcDQgAEIAPBHdNDKQUh7+cG5Yq4XB6RtLAHQS0lfOsf
+          +f2/dvymMR6XD8a9gVUIJ93tdToR2YPaJ4k6Bj1I770KBjWMdqNtMGswDgYDVR0P
+          AQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMB
+          Af8EBTADAQH/MCkGA1UdDgQiBCBbol1KWfUfEusfhYqAX8UmUBCDmwezPA95Bno0
+          wlemyDAKBggqhkjOPQQDAgNIADBFAiEAoJh/ioXkZ6QiqRtVTYqzwLnFZiwvW1cQ
+          y+2fOKzrO+sCIHiZjRqEBlL9ycwidoOfhEE/8XMJ1FbrlMLCFVSL5sNw
+          -----END CERTIFICATE-----
+          
+    httpOptions:
+      verify: false
